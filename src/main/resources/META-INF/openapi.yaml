@@ -1,0 +1,51 @@
+openapi: 3.0.0
+info:
+  title: OPEN API
+  description: Modificacion y creacion de un autor
+  version: 1.0.0
+
+paths:
+
+  /authors/{id}:
+
+    get:
+      summary: Lista los autores por su id
+      responses:
+        '200':
+          description: OK
+
+    put:
+      summary: Modifica un autor por su id
+      responses:
+        '200':
+          description: OK
+    delete:
+      summary: Elimina un autor por su id
+      responses:
+        '200':
+          description: OK
+  /authors:
+    get:
+      summary: Lista todos los autores
+      responses:
+        '200':
+          description: OK
+
+    post:
+      summary: Crea un nuevo autor
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                firstName:
+                  type: String
+                lastName:
+                  type: String
+      responses:
+        '200':
+          description: Se crea un autor
+        '400':
+          description: Error
